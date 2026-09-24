@@ -20,15 +20,12 @@ jobs:
           node-version: 22
 
       - name: Setup Java JDK
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Setup Android SDK Tools
-        uses: android-actions/setup-android@v3
-
-      - name: Accept Android Licenses
+      - name: Accept Android SDK Licenses
         run: |
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
@@ -36,13 +33,9 @@ jobs:
         run: |
           npm install @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
 
-      - name: Initialize Capacitor
+      - name: Add Android Platform & Sync
         run: |
-          npx cap init "Quran App" "com.quran.app" --web-dir "."
-
-      - name: Add Android Platform
-        run: |
-          npx cap add android
+          npx cap add android || true
           npx cap sync android
 
       - name: Build Debug APK
