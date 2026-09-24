@@ -1,5 +1,5 @@
 {
   "appId": "com.quran.app",
   "appName": "Quran App",
-  "webDir": "."
+  "webDir": "www"
 }
