@@ -1,7 +1,7 @@
 {
   "name": "quran-app",
   "version": "1.0.0",
-  "description": "Quran Surah Info App",
+  "description": "Quran Surah App",
   "main": "index.html",
   "dependencies": {
     "@capacitor/android": "^6.0.0",
